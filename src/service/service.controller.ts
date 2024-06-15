@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { Public } from '../auth/decorators/public.decorator';
 import { Service } from '../entity/service.entity';
 import { ServiceService } from './service.service';
@@ -11,5 +11,10 @@ export class ServiceController {
   @Post()
   create(@Body() service: Service): Promise<Service> {
     return this.serviceService.create(service);
+  }
+
+  @Get()
+  findAll(): Promise<Service[]> {
+    return this.serviceService.findAll();
   }
 }
