@@ -1,25 +1,19 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class User {
+export class Service {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  firstName: string;
+  name: string;
 
   @Column()
-  lastName: string;
-
-  @Column()
-  eMail: string;
-
-  @Column()
-  password: string;
+  description: string;
 
   @Column('decimal', {
     precision: 19,
     scale: 2,
   })
-  balance: number;
+  price: number;
 }

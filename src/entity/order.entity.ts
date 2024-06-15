@@ -1,5 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { User } from 'src/entity/user.entity';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Order {
@@ -7,16 +6,11 @@ export class Order {
   orderId: number;
 
   @Column()
-  productName: string;
+  serviceId: number;
 
   @Column()
   amount: number;
 
   @Column()
-  price: number;
-
-  @Column()
-  userId: string;
-
-
+  userId: number;
 }
